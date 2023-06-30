@@ -1,0 +1,12 @@
+from flask import Flask, render_template
+
+class WebApp(Flask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    @route('/')
+    def home(self):
+        return render_template('index.html')
+
+app = WebApp(__name__)
+app.run()
